@@ -10,5 +10,5 @@ def send_text_prompt(prompt):
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
     model = genai.GenerativeModel("gemini-1.5-flash")
     
-    response = model.generate_content(prompt)
+    response = model.generate_content(prompt + ". Limit your answer to 800 characters.")
     return response.text
